@@ -1,0 +1,9 @@
+# Write a problem to read the text from a given file "poem.txt" and find out whether it contains the word 'twinkle'.
+
+f = open("poem.txt")
+c = f.read()
+if 'twinkle' in c:
+    print("Yes, the word 'twinkle' is present in the file.")
+else:
+    print("No, the word 'twinkle' is not present in the file.")
+f.close()
