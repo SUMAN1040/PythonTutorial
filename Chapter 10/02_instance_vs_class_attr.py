@@ -6,15 +6,9 @@ class Employee:
 
 harry = Employee()
 harry.name = "Harish"  # This is an instance attribute
+harry.language = "JavaScript"  # Modifying class attribute for this instance
 print(harry.name)
 print(harry.language)
 print(harry.salary)
 
-rohan = Employee()
-rohan.name = "Rdon"
-print(rohan.salary, rohan.language)
-print(rohan.name)
-
-
-# Here name is instance attributes and salary and language are class attributes as they belong to the class.
 
