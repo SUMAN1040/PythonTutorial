@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
+        "dunder",
         "Rohan"
-    ]
+    ],
+    "python.REPL.enableREPLSmartSend": false
 }
