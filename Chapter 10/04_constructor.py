@@ -10,7 +10,7 @@ class Employee:
         print("I am creating an employee object")
 
 
-    def __init__(self):
+    def getInfo(self):
         print(f"The Language is {self.language} and salary is {self.salary}")
 
     @staticmethod
