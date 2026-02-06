@@ -15,7 +15,3 @@ def getLastDigits(x):
     return res
 
 print(getLastDigits(12345))
-
-
-
-
