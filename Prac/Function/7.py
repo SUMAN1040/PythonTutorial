@@ -6,7 +6,6 @@ def is_prime(n):
             return False
     return True
 
-
 def print_prime_factors(x):
     for i in range(2, x + 1):
         if is_prime(i):
@@ -15,7 +14,6 @@ def print_prime_factors(x):
                 x //= i 
         if x == 1:
             break
-
 
 n = int(input("Enter n: "))
 print_prime_factors(n)
