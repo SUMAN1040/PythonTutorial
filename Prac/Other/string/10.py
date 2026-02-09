@@ -11,3 +11,4 @@ def binToDec(b):
     res = int(b, 2)
     return res
 print(binToDec('1100'))
+
