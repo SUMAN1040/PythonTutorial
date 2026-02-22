@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Eco_Efficient.views import innox
-# from django.urls import 
+from ui.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', innox),
+    path('', include('ui.urls'))
 ]
