@@ -16,10 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Sahaayak.views import womenSafetyApplication
+from .import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', womenSafetyApplication)
+    path('', views.womenSafetyApplication, name='womenSafetyAplication'),
+    path('about/', views.homeApplication, name='homeApplication'),
+    path('info/', views.index, name='other'),
+    path('websites/', views.web1, name='websites'),
+    path('home/', views.home, name='home'),
+    path('removePunc/', views.removePunch, name='rempun'),
+    path('capitalizeFirst/', views.capFirst, name='capFirst'),
+    path('newLineRemove/', views.newLineRemove, name='newLine'),
+    path('spaceRemove/', views.spaceRemove, name='spaceRemove'),
+    path('charCount/', views.charCount, name='charCount'),
 ]
-
