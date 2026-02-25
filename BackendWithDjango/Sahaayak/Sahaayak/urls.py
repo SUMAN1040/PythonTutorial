@@ -30,4 +30,5 @@ urlpatterns = [
     path('newLineRemove/', views.newLineRemove, name='newLine'),
     path('spaceRemove/', views.spaceRemove, name='spaceRemove'),
     path('charCount/', views.charCount, name='charCount'),
+    path('runTemplate/', views.template, name='Check Template'),
 ]

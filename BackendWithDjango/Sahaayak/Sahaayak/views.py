@@ -68,3 +68,9 @@ def spaceRemove(request):
 
 def charCount(request):
     return HttpResponse("char Count")
+
+
+
+def template(request):
+    params = {'name' : 'Suman', 'Place' : 'Jaipur'}
+    return render(request, 'index.html', params)
