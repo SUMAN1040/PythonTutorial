@@ -62,9 +62,18 @@ def removePunch(request):
     print(djText)
     #Analyze the text
     # return HttpResponse("Remove Punch")
-    analyzed = djText
-    params = {'purpose': 'Removed Punctuatuions', 'analyzed_text': analyzed}
-    return render(request, 'analyze.html', params)
+
+    if removepunc == "on":
+        punctuatuions = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        analyzed = ""
+        for char in djText:
+            if char not in punctuatuions:
+                analyzed = analyzed + char
+        params = {'purpose': 'Removed Punctuatuions', 'analyzed_text': analyzed}
+        return render(request, 'analyze.html', params)
+    else:
+        return HttpResponse("Please select any operation and try again")
+
 
 def capFirst(request):
     return HttpResponse("capitalize First")
