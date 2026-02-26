@@ -55,7 +55,16 @@ def home(request):
 
 
 def removePunch(request):
-    return HttpResponse("Remove Punch")
+    #Get the text
+    djText = request.GET.get('Info', 'default')
+    removepunc = request.GET.get('remove', 'default')
+    print(removepunc)
+    print(djText)
+    #Analyze the text
+    # return HttpResponse("Remove Punch")
+    analyzed = djText
+    params = {'purpose': 'Removed Punctuatuions', 'analyzed_text': analyzed}
+    return render(request, 'analyze.html', params)
 
 def capFirst(request):
     return HttpResponse("capitalize First")
@@ -70,7 +79,7 @@ def charCount(request):
     return HttpResponse("char Count")
 
 
-
 def template(request):
-    params = {'name' : 'Suman', 'Place' : 'Jaipur'}
-    return render(request, 'index.html', params)
+    # params = {'name' : 'Suman', 'Place' : 'Jaipur'}
+    return render(request, 'index.html')
+

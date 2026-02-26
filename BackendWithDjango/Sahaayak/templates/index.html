@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template is working</title>
+    <title>TextUtils</title>
 </head>
 
 <body>
-    Hey Suman, Most Welcome to this Course. And for now just check the template is working fine
+    <h1>Welcome to the text analyazer. Enter your text below</h1>
 
-    <div>
-        <h1>{{ name }} lives in {{ Place }}</h1>
-    </div>
+    <form action="/removePunc/" method="get">
+        <textarea name="Info" id="inputInfo" style="width: 1896px; height: 156px;"></textarea>
+
+        <input type="checkbox" name="remove">Remove Punctuations <br>
+        <button type="submit">Analyze Text</button>
+    </form>
 </body>
 
 </html>
