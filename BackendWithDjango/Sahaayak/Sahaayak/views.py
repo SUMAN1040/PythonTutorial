@@ -57,7 +57,11 @@ def home(request):
 def removePunch(request):
     #Get the text
     djText = request.GET.get('Info', 'default')
-    removepunc = request.GET.get('remove', 'default')
+    removepunc = request.GET.get('remove', 'off')
+    fullCap = request.GET.get('fullCaps', 'off')
+    lineRemover = request.GET.get('lineRemover', 'off')
+    extraSpaceRemover = request.GET.get('spaceRemover', 'off')
+    charCounts = request.GET.get('charCount', 'off')
     print(removepunc)
     print(djText)
     #Analyze the text
@@ -70,6 +74,35 @@ def removePunch(request):
             if char not in punctuatuions:
                 analyzed = analyzed + char
         params = {'purpose': 'Removed Punctuatuions', 'analyzed_text': analyzed}
+        return render(request, 'analyze.html', params)
+    elif (fullCap == "on"):
+        analyzed = ""
+        for char in djText:
+            analyzed = analyzed + char.upper()
+            params = {'purpose': 'Full Capitalization', 'analyzed_text': analyzed}
+        return render(request, 'analyze.html', params)
+    elif (lineRemover == "on"):
+        analyzed = ""
+        for char in djText:
+            if char != "\n":
+                analyzed = analyzed + char
+        params = {'purpose': 'Remove Extra New Lines', 'analyzed_text': analyzed}
+        return render(request, 'analyze.html', params)
+    elif (extraSpaceRemover == 'on'):
+        analyzed = ""
+        for index, char in enumerate(djText):
+            if djText[index] == " " and djText[index + 1] == " ":
+                pass
+            else:
+                analyzed = analyzed + char
+        params = {'purpose': 'Remove Extra Spaces', 'analyzed_text': analyzed}
+        return render(request, 'analyze.html', params)
+    elif (charCounts == 'on'):
+        analyzed = 0
+        for char in djText:
+            if char != " ":
+                analyzed = analyzed + 1
+        params = {'purpose': 'Character Count', 'analyzed_text': analyzed}
         return render(request, 'analyze.html', params)
     else:
         return HttpResponse("Please select any operation and try again")
@@ -91,4 +124,3 @@ def charCount(request):
 def template(request):
     # params = {'name' : 'Suman', 'Place' : 'Jaipur'}
     return render(request, 'index.html')
-
