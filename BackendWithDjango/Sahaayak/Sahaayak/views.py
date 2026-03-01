@@ -107,7 +107,6 @@ def removePunch(request):
     else:
         return HttpResponse("Please select any operation and try again")
 
-
 def capFirst(request):
     return HttpResponse("capitalize First")
 
