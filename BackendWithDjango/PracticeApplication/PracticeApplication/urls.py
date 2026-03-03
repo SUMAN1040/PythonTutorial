@@ -21,6 +21,8 @@ from .import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('about/', views.about, name='about'),
+    path('<int:id>/<str:name>/', views.dynamic_url, name='dynamic_url'),
+    path('about-InnoX/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
+    path('home/', views.HomeView.as_view(), name='home'),
 ]

@@ -11,6 +11,11 @@
     <h1>This HTML page is returned by Django. :) ✨</h1>
     <p>Django is really nice!</p>
     <p>This is the about page of the Django course.</p>
+
+    <p>
+        <a href="{% url 'index' %}">Home</a> <br>
+        <a href="{% url 'contact' %}">Contact</a>
+    </p>
 </body>
 
 </html>
