@@ -11,6 +11,19 @@
     <h1>This HTML page is returned by Django. :) ✨</h1>
     <p>Django is really nice!</p>
 
+    <h2>Your Lucky Number is: {{ Lucky_number }}</h2>
+
+    <ul>
+        {% for vegetable in Vegetables %}
+        <li>{{ vegetable }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    {% if Age >= 18 %}
+    <h1>You can vote!</h1>
+    {% endif %}
+    <hr>
     <p>
         <a href="{% url 'contact' %}" target="_blank">Contact</a> <br>
         <a href="{% url 'about' %}">About</a>

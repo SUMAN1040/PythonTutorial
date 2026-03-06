@@ -1,10 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
+import random
 
 def index (request):
     # print(vars(request))
-    return render(request, 'index.html')
+    lucky_number = random.randint(100, 999)
+    vegetables = ['Tomato', 'Cucumber', 'Carrot', 'Spinach']
+    age = 22
+    context = {"Lucky_number": lucky_number, "Vegetables": vegetables, "Age": age}
+    return render(request, 'index.html', context)
 
 def about (request):
     return render(request, 'about.html')
