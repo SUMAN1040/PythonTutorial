@@ -8,7 +8,14 @@ def index (request):
     lucky_number = random.randint(100, 999)
     vegetables = ['Tomato', 'Cucumber', 'Carrot', 'Spinach']
     age = 22
-    context = {"Lucky_number": lucky_number, "Vegetables": vegetables, "Age": age}
+    cities = [
+        {'name': 'New York', 'population': 8000000, "country": "USA"},
+        {'name': 'Los Angeles', 'population': 4000000, "country": "USA"},
+        {'name': 'Chicago', 'population': 2700000, "country": "USA"},
+        {'name': 'Houston', 'population': 2300000, "country": "USA"},
+        {'name': 'Phoenix', 'population': 1600000, "country": "USA"},
+    ]
+    context = {"cities": cities, "Lucky_number": lucky_number, "Vegetables": vegetables, "Age": age}
     return render(request, 'index.html', context)
 
 def about (request):

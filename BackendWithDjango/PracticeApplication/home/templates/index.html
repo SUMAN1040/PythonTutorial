@@ -20,10 +20,28 @@
     </ul>
 
     <hr>
+
+
     {% if Age >= 18 %}
     <h1>You can vote!</h1>
     {% endif %}
     <hr>
+
+
+    <h3>City Infomations</h3>
+    <p> S.No | Name | Population | Country </p>
+    {% for city in cities %}
+    <p> {{ forloop.counter }} | {{ city.name }} | {{ city.population }} | {{ city.country }} </p>
+    {% endfor %}
+
+    <hr>
+
+    {% lorem %} {# Outputs one paragraph #}
+    {% lorem 3 p %} {# 3 paragraphs #}
+    {% lorem 2 w random %} {# 2 random words #}
+
+    <hr>
+
     <p>
         <a href="{% url 'contact' %}" target="_blank">Contact</a> <br>
         <a href="{% url 'about' %}">About</a>
