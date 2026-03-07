@@ -32,3 +32,13 @@ class HomeView(View):
     temlate_name = 'index.html'
     def get(self, request):
         return render(request, self.temlate_name)
+        
+
+
+
+# Project Creating 
+def project(request):
+    lucky_number = random.randint(100, 999)
+    context = {"Lucky_number": lucky_number}
+    
+    return render(request, "project/project.html")

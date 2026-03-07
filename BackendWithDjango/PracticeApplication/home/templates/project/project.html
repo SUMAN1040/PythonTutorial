@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block start %}
+<div class="container mt-5">
+    <h2 class="text-center">Guess the lucky number</h2>
+
+    <form>
+        <div class="form-group col-md-4 mx-auto">
+            <label for="">Hope you win!</label>
+            <input placeholder="Guess the number" class="form-control mt-1">
+
+            <div class="text-center mt-4">
+                <button class="btn btn-success">Submit</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<p>{{ lucky_number }}</p>
+
+<script>
+    var lucky_number = "{{ lucky_number }}";
+    function checkLuck() {
+        var input = document.getElementById("numberInput");
+
+        if(input.value == lucky_number) {
+            alert("Congratulations! You guessed the lucky number!");
+        } else {
+            alert("Sorry, try again!");
+        }
+    }
+</script>
+{% endblock %}

@@ -25,4 +25,5 @@ urlpatterns = [
     path('about-InnoX/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('home/', views.HomeView.as_view(), name='home'),
+    path('project/', views.project, name='project'),
 ]
