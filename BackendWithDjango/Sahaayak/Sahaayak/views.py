@@ -45,11 +45,11 @@ def home(request):
             
             <h1>Home</h1>
     
-             <li><a href="/removePunc/">Remove Punctuation</a></li>
-             <li><a href="/capitalizeFirst/">Capitalization</a></li>
-             <li><a href="/newLineRemove/">New Line Remover</a></li>
-             <li><a href="/spaceRemove/">Space Remover</a></li>
-             <li><a href="/charCount/">Charecter Counter</a></li>
+            <li><a href="/removePunc/">Remove Punctuation</a></li>
+            <li><a href="/capitalizeFirst/">Capitalization</a></li>
+            <li><a href="/newLineRemove/">New Line Remover</a></li>
+            <li><a href="/spaceRemove/">Space Remover</a></li>
+            <li><a href="/charCount/">Character Counter</a></li>
             '''
     return HttpResponse(nav)
 
@@ -57,6 +57,8 @@ def home(request):
 def removePunch(request):
     #Get the text
     djText = request.GET.get('Info', 'default')
+    
+    #Check checkbox values
     removepunc = request.GET.get('remove', 'off')
     fullCap = request.GET.get('fullCaps', 'off')
     lineRemover = request.GET.get('lineRemover', 'off')
@@ -70,19 +72,21 @@ def removePunch(request):
 # check which checkbox is on
 #Punctuation to remove
     if removepunc == "on":
-        punctuatuions = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
         analyzed = ""
         for char in djText:
-            if char not in punctuatuions:
+            if char not in punctuations:
                 analyzed = analyzed + char
-        params = {'purpose': 'Removed Punctuatuions', 'analyzed_text': analyzed}
+        params = {'purpose': 'Removed Punctuations', 'analyzed_text': analyzed}
         return render(request, 'analyze.html', params)
+#Full Capitalization
     elif (fullCap == "on"):
         analyzed = ""
         for char in djText:
             analyzed = analyzed + char.upper()
             params = {'purpose': 'Full Capitalization', 'analyzed_text': analyzed}
         return render(request, 'analyze.html', params)
+#New Line Remover
     elif (lineRemover == "on"):
         analyzed = ""
         for char in djText:
@@ -90,6 +94,7 @@ def removePunch(request):
                 analyzed = analyzed + char
         params = {'purpose': 'Remove Extra New Lines', 'analyzed_text': analyzed}
         return render(request, 'analyze.html', params)
+#Extra Space Remover
     elif (extraSpaceRemover == 'on'):
         analyzed = ""
         for index, char in enumerate(djText):
@@ -99,6 +104,7 @@ def removePunch(request):
                 analyzed = analyzed + char
         params = {'purpose': 'Remove Extra Spaces', 'analyzed_text': analyzed}
         return render(request, 'analyze.html', params)
+#Character Count
     elif (charCounts == 'on'):
         analyzed = 0
         for char in djText:
@@ -106,6 +112,7 @@ def removePunch(request):
                 analyzed = analyzed + 1
         params = {'purpose': 'Character Count', 'analyzed_text': analyzed}
         return render(request, 'analyze.html', params)
+#If no option is selected
     else:
         return HttpResponse("Please select any operation and try again")
 
