@@ -67,6 +67,8 @@ def removePunch(request):
     #Analyze the text
     # return HttpResponse("Remove Punch")
 
+# check which checkbox is on
+#Punctuation to remove
     if removepunc == "on":
         punctuatuions = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
         analyzed = ""

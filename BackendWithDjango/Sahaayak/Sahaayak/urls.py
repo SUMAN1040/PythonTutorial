@@ -20,7 +20,7 @@ from .import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.womenSafetyApplication, name='womenSafetyAplication'),
+    path('wsp/', views.womenSafetyApplication, name='womenSafetyAplication'),
     path('about/', views.homeApplication, name='homeApplication'),
     path('info/', views.index, name='other'),
     path('websites/', views.web1, name='websites'),
@@ -30,6 +30,6 @@ urlpatterns = [
     path('newLineRemove/', views.newLineRemove, name='newLine'),
     path('spaceRemove/', views.spaceRemove, name='spaceRemove'),
     path('charCount/', views.charCount, name='charCount'),
-    path('runTemplate/', views.template, name='Check Template'),
+    path('', views.template, name='Check Template'),
 
 ]
