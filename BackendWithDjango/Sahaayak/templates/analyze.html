@@ -9,6 +9,8 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
+
+
 <body>
     <!-- Adding Navbar through Bootstrap -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -60,12 +62,14 @@
     </div>
 
 
+
     <!-- Adding Input Groups through Bootstrap -->
     <div class="container">
         <h1>Your Analyzed Text - {{ purpose }}</h1>
         <p>
         <pre style="color: rgb(149, 2, 255); font-size: 40px;">
             {{ analyzed_text }}
+            <p>Character Count: {{ char_count }}</p>
         </pre>
         </p>
     </div>
