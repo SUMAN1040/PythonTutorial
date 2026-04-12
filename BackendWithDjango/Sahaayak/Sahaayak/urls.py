@@ -25,11 +25,10 @@ urlpatterns = [
     path('info/', views.index, name='other'),
     path('websites/', views.web1, name='websites'),
     path('home/', views.home, name='home'),
-    path('removePunc/', views.removePunch, name='rempun'),   ####
+    path('analyze/', views.analyze, name='everyThings'),
     path('capitalizeFirst/', views.capFirst, name='capFirst'),
     path('newLineRemove/', views.newLineRemove, name='newLine'),
     path('spaceRemove/', views.spaceRemove, name='spaceRemove'),
     path('charCount/', views.charCount, name='charCount'),
     path('', views.template, name='Check Template'),
-
 ]

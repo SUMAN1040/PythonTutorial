@@ -45,7 +45,7 @@ def home(request):
             
             <h1>Home</h1>
     
-            <li><a href="/removePunc/">Remove Punctuation</a></li>
+            # <li><a href="/removePunc/">Remove Punctuation</a></li>
             <li><a href="/capitalizeFirst/">Capitalization</a></li>
             <li><a href="/newLineRemove/">New Line Remover</a></li>
             <li><a href="/spaceRemove/">Space Remover</a></li>
@@ -54,7 +54,7 @@ def home(request):
     return HttpResponse(nav)
 
 
-def removePunch(request):
+def analyze(request):
     #Get the text
     djText = request.POST.get('Info', 'default')
     
@@ -64,8 +64,8 @@ def removePunch(request):
     lineRemover = request.POST.get('lineRemover', 'off')
     extraSpaceRemover = request.POST.get('spaceRemover', 'off')
     charCounts = request.POST.get('charCount', 'off')
-    print(removepunc)
-    print(djText)
+    # print(removepunc)
+    # print(djText)
     #Analyze the text
     # return HttpResponse("Remove Punch")
 
