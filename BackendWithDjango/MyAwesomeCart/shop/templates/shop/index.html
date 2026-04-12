@@ -18,163 +18,53 @@
 {% endblock %}
 
 {% block body %}
-{% load static %}
-<!-- CAROUSEL -->
-<div class="container">
-  <div id="demo" class="carousel slide my-3" data-ride="carousel">
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
+  {% load static %}
+  <!-- CAROUSEL -->
+  <div class="container">
+    <div id="demo" class="carousel slide my-3" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        {% for i in range %}
+        <li data-target="#demo" data-slide-to="{{ i }}"></li>
+        {% endfor %}
+      </ul>
 
-    <div class="carousel-inner no-padding">
-      <!-- FIRST SLIDE -->
-      <div class="carousel-item active">
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Samsung Galaxy S23</h5>
-              <p class="card-text">Powerful flagship smartphone with Snapdragon processor and 50MP camera.</p>
-              <a href="#" class="btn btn-primary">View</a>
+      <div class="carousel-inner no-padding">
+        <!-- FIRST SLIDE -->
+        <div class="carousel-item active">
+          <div class="col-md-3">
+            <div class="card">
+              <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">Samsung Galaxy S23</h5>
+                <p class="card-text">Powerful flagship smartphone with Snapdragon processor.</p>
+                <a href="#" class="btn btn-primary">View</a>
+              </div>
             </div>
-          </div>
         </div>
 
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">HP Pavilion Laptop</h5>
-              <p class="card-text">Intel i5 laptop with 16GB RAM and SSD storage for productivity.</p>
-              <a href="#" class="btn btn-primary">View</a>
+          {% for i in product|slice:"1:" %}
+          <div class="col-md-3">
+            <div class="card">
+              <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">HP Pavilion Laptop</h5>
+                <p class="card-text">Intel i5 laptop with 16GB RAM and SSD storage for productivity.</p>
+                <a href="#" class="btn btn-primary">View</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Sony WH-1000XM5</h5>
-              <p class="card-text">Premium noise cancelling headphones with excellent battery life.</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
+          {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+        </div><div class="carousel-item">
+            {% endif%}
 
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Apple Watch Series 9</h5>
-              <p class="card-text">Smartwatch with health monitoring and fitness tracking features.</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
+            {% endfor %}
       </div>
-
-      <!-- SECOND SLIDE -->
-      <div class="carousel-item">
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Canon DSLR</h5>
-              <p class="card-text">Professional DSLR camera for photography lovers.</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">iPad Pro</h5>
-              <p class="card-text">Powerful tablet with Apple M-series chip.</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Gaming Keyboard</h5>
-              <p class="card-text">RGB mechanical keyboard designed for gamers.</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Bluetooth Speaker</h5>
-              <p class="card-text">Portable speaker with deep bass and long battery.</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- THIRD SLIDE -->
-      <div class="carousel-item">
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Smart TV</h5>
-              <p class="card-text">4K Ultra HD smart television with streaming apps.</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Gaming Mouse</h5>
-              <p class="card-text">High-precision gaming mouse with RGB lighting.</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Fitness Band</h5>
-              <p class="card-text">Track steps, heart rate and sleep activity.</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card">
-            <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
-            <div class="card-body">
-              <h5 class="card-title">Wireless Earbuds</h5>
-              <p class="card-text">Compact earbuds with noise isolation.</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-</div>
 
-<!-- CONTROLS -->
-<a class="carousel-control-prev" href="#demo" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+  <!-- CONTROLS -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
 
-<a class="carousel-control-next" href="#demo" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+  <a class="carousel-control-next" href="#demo" data-slide="next"><span class="carousel-control-next-icon"></span></a>
 {% endblock %}
