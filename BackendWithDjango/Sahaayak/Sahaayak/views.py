@@ -124,8 +124,6 @@ def analyze(request):
     
     return render(request, 'analyze.html', params)
 
-
-
 def capFirst(request):
     return HttpResponse("capitalize First")
 
