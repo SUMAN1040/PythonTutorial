@@ -35,7 +35,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/InnoX107/Documents/PythonTutorial/BackendWithDjango/env"
+VIRTUAL_ENV="/home/InnoX107/Documents/Projects/PythonTutorial/BackendWithDjango/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

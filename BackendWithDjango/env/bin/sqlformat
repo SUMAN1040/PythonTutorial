@@ -1,4 +1,4 @@
-#!/home/InnoX107/Documents/PythonTutorial/BackendWithDjango/env/bin/python
+#!/home/InnoX107/Documents/Projects/PythonTutorial/BackendWithDjango/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
