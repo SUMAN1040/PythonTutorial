@@ -31,4 +31,8 @@ urlpatterns = [
     path('spaceRemove/', views.spaceRemove, name='spaceRemove'),
     path('charCount/', views.charCount, name='charCount'),
     path('', views.template, name='Check Template'),
+
+
+    # Check Some functionalities
+    path('index/', views.index, name='index'),
 ]

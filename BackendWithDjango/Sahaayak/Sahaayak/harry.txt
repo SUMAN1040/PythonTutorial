@@ -1,1 +1,2 @@
-Hey , I am Suman Kumar Dey
+<h1>This is a simple text file to demonstrate file reading functionality in Python.</h1>
+<p>It contains some random lines of text and can be used to test file I/O operations.</p>

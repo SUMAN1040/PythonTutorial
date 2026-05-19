@@ -6,7 +6,6 @@ def womenSafetyApplication(request):
     return HttpResponse("<h1>Hey Suman, Welcome you in this django learning path<h1/>")
 
 
-
 def homeApplication(request):
     return HttpResponse("Hey Suman, Here we are just checking how whole django apps views are working")
 
@@ -14,7 +13,7 @@ def homeApplication(request):
 def index(request):
     with open('Sahaayak/harry.txt', 'r') as note:
         return HttpResponse(note.read())
-    
+
 
 def web1(request):
     return HttpResponse("""<!DOCTYPE html>
