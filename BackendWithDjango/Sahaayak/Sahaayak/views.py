@@ -9,11 +9,9 @@ def womenSafetyApplication(request):
 def homeApplication(request):
     return HttpResponse("Hey Suman, Here we are just checking how whole django apps views are working")
 
-
 def index(request):
     with open('Sahaayak/harry.txt', 'r') as note:
         return HttpResponse(note.read())
-
 
 def web1(request):
     return HttpResponse("""<!DOCTYPE html>
