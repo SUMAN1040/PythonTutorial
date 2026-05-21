@@ -130,7 +130,7 @@ def newLineRemove(request):
     return HttpResponse("New Line Remove")
 
 def spaceRemove(request):
-    return HttpResponse("space Remove")
+    return HttpResponse("Hey i removed the spaces")
 
 def charCount(request):
     return HttpResponse("char Count")
