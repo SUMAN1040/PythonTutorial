@@ -61,12 +61,7 @@ def analyze(request):
     lineRemover = request.POST.get('lineRemover', 'off')
     extraSpaceRemover = request.POST.get('spaceRemover', 'off')
     charCounts = request.POST.get('charCount', 'off')
-    # print(removepunc)
-    # print(djText)
-    #Analyze the text
-    # return HttpResponse("Remove Punch")
 
-# check which checkbox is on
 #Punctuation to remove
     if removepunc == "on":
         punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
@@ -76,7 +71,6 @@ def analyze(request):
                 analyzed = analyzed + char
         params = {'purpose': 'Removed Punctuations', 'analyzed_text': analyzed}
         djText = analyzed
-        # return render(request, 'analyze.html', params)
 #Full Capitalization
     if (fullCap == "on"):
         analyzed = ""
@@ -84,7 +78,6 @@ def analyze(request):
             analyzed = analyzed + char.upper()
             params = {'purpose': 'Full Capitalization', 'analyzed_text': analyzed}
             djText = analyzed
-        # return render(request, 'analyze.html', params)
 #New Line Remover
     if lineRemover == "on":
         analyzed = ""
@@ -96,7 +89,6 @@ def analyze(request):
         'analyzed_text': analyzed
         }
         djText = analyzed
-        # return render(request, 'analyze.html', params)
 #Extra Space Remover
     if (extraSpaceRemover == 'on'):
         analyzed = ""
@@ -107,7 +99,6 @@ def analyze(request):
                 analyzed = analyzed + char
         params = {'purpose': 'Remove Extra Spaces', 'analyzed_text': analyzed}
         djText = analyzed
-        # return render(request, 'analyze.html', params)
 #Character Count
     if (charCounts == 'on'):
         count = 0
