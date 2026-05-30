@@ -36,7 +36,6 @@ def web1(request):
 
 </html>""")
 
-
 def home(request):
     nav = '''
             
@@ -49,7 +48,6 @@ def home(request):
             <li><a href="/charCount/">Character Counter</a></li>
             '''
     return HttpResponse(nav)
-
 
 def analyze(request):
     #Get the text
