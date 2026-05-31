@@ -29,12 +29,13 @@
         {% endfor %}
       </ul>
 
+      <!-- Sliding Start here -->
       <div class="carousel-inner no-padding">
         <!-- FIRST SLIDE -->
         <div class="carousel-item active">
           <div class="col-md-3">
             <div class="card">
-              <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
+              <img src="{% static 'shop/images/test.jpg' %}" class="card-img-top" />
               <div class="card-body">
                 <h5 class="card-title">Samsung Galaxy S23</h5>
                 <p class="card-text">Powerful flagship smartphone with Snapdragon processor.</p>
@@ -46,7 +47,7 @@
           {% for i in product|slice:"1:" %}
           <div class="col-md-3">
             <div class="card">
-              <img src="{% static 'shop/test.jpg' %}" class="card-img-top" />
+              <img src="{% static 'shop/images/test.jpg' %}" class="card-img-top" />
               <div class="card-body">
                 <h5 class="card-title">HP Pavilion Laptop</h5>
                 <p class="card-text">Intel i5 laptop with 16GB RAM and SSD storage for productivity.</p>
