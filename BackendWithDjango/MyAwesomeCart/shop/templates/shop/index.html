@@ -35,22 +35,22 @@
         <div class="carousel-item active">
           <div class="col-md-3">
             <div class="card">
-              <img src="{% static 'shop/images/test.jpg' %}" class="card-img-top" />
+              <img src="/media/{{product.0.image}}" class="card-img-top" />
               <div class="card-body">
-                <h5 class="card-title">Samsung Galaxy S23</h5>
-                <p class="card-text">Powerful flagship smartphone with Snapdragon processor.</p>
+                <h5 class="card-title">{{product.0.Product_name}}</h5>
+                <p class="card-text">{{product.0.desc}}</p>
                 <a href="#" class="btn btn-primary">View</a>
               </div>
             </div>
-        </div>
+          </div>
 
           {% for i in product|slice:"1:" %}
           <div class="col-md-3">
             <div class="card">
-              <img src="{% static 'shop/images/test.jpg' %}" class="card-img-top" />
+              <img src="/media/{{i.image}}" class="card-img-top" />
               <div class="card-body">
-                <h5 class="card-title">HP Pavilion Laptop</h5>
-                <p class="card-text">Intel i5 laptop with 16GB RAM and SSD storage for productivity.</p>
+                <h5 class="card-title">{{i.Product_name}}</h5>
+                <p class="card-text">{{i.desc}}</p>
                 <a href="#" class="btn btn-primary">View</a>
               </div>
             </div>
