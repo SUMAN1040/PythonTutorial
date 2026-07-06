@@ -125,4 +125,4 @@ def charCount(request):
 
 def template(request):
     # params = {'name' : 'Suman', 'Place' : 'Jaipur'}
-    return render(request, 'index.html')
+    return render(request, 'index2.html')
