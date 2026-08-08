@@ -49,6 +49,12 @@ def home(request):
             '''
     return HttpResponse(nav)
 
+# Main url that is index.html
+def template(request):
+    # params = {'name' : 'Suman', 'Place' : 'Jaipur'}
+    return render(request, 'index2.html')
+
+# Analyze url to perform analysis on the text
 def analyze(request):
     #Get the text
     djText = request.POST.get('Info', 'default')
@@ -120,10 +126,4 @@ def spaceRemove(request):
     return HttpResponse("Hey i removed the spaces")
 
 def charCount(request):
-    return HttpResponse("char Count")
-
-
-def template(request):
-    # params = {'name' : 'Suman', 'Place' : 'Jaipur'}
-    return render(request, 'index2.html')
-    
+    return HttpResponse("char Count")   
