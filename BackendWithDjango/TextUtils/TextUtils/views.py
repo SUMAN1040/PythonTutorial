@@ -5,7 +5,6 @@ from django.shortcuts import render
 def womenSafetyApplication(request):
     return HttpResponse("<h1>Hey Suman, Welcome you in this django learning path<h1/>")
 
-
 def homeApplication(request):
     return HttpResponse("Hey Suman, Here we are just checking how whole django apps views are working")
 
