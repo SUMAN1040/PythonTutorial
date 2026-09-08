@@ -11,7 +11,6 @@ print("The type of b is: ", type(b))
 
 print(type(complex(3, 4)))
 
-
 # List: List is an order collection of data with elements separated by a comma and enclosded within squre brackets
 list = [8, 2.3, [-2, 4], ["apple", "banana"]]
 print(list)
