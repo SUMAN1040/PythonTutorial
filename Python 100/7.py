@@ -7,3 +7,4 @@ print(12 % 9)
 print(12 ** 2)
 
 # Create a calculator
+Addtion, Subtraction, Multiplication, Division
