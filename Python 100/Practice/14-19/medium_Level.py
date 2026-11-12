@@ -168,15 +168,15 @@
 
 
 # Take 10 numbers from the user. Stop immediately if the user enters 0. Skip negative numbers and calculate the sum of positive numbers.
-if __name__ == "__main__":
-    total = 0
-    count = 0
-    for i in range(10):
-        num = int(input("Enter a number: "))
-        if num == 0:
-            break
-        if num < 0:
-            continue
-        total += num
-        count += 1
-    print("Sum:", total)
+# if __name__ == "__main__":
+#     total = 0
+#     count = 0
+#     for i in range(10):
+#         num = int(input("Enter a number: "))
+#         if num == 0:
+#             break
+#         if num < 0:
+#             continue
+#         total += num
+#         count += 1
+#     print("Sum:", total)
