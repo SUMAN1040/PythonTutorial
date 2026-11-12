@@ -62,12 +62,32 @@ if __name__ == "__main__":
         print("\n--- ATM Menu ---")
         print("1. Check Balance")
         print("2. Deposit")
-        print("3. Withdrawal")
+        print("3. Withdraw")
         print("4. Exit")
 
-        choice = input("Enter your choice: ")
+        choice = input("Enter your choice (1-4): ")
+
         match choice:
             case "1":
-                print(f"Current balance: {balance: 2f}")
+                print(f"Current balance: {balance:.2f}")
             case "2":
-                2
+                amount = float(input("Enter amount to deposit: "))
+                if amount > 0:
+                    balance += amount
+                    print(f"Deposited {amount:.2f}. New balance: {balance:.2f}")
+                else:
+                    print("Deposit amount must be positive.")
+            case "3":
+                amount = float(input("Enter amount to withdraw: "))
+                if amount <= 0:
+                    print("Withdrawal amount must be positive.")
+                elif amount > balance:
+                    print("Insufficient balance!")
+                else:
+                    balance -= amount
+                    print(f"Withdrew {amount:.2f}. Remaining balance: {balance:.2f}")
+            case "4":
+                print("Thank you for using the ATM. Goodbye!")
+                break
+            case _:
+                print("Invalid choice. Please select 1-4.")
